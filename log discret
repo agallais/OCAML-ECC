@@ -17,10 +17,10 @@ maintenant s' il veut connaître M, il va devoir calculer le logarithme en base 
 
 On va commencer par la méthode barbare
 
-let egal P1 P2 =
+let egal p P1 P2 =
 match P1 P2 with 
 |O,O-> true
-|P(x1,y1),P(x2,y2)-> (x1=x2 && y1=y2)
+|P(x1,y1),P(x2,y2)-> ((classe(x1-x2) p = 0) && (classe (y1-y2) p) =0)
 |_-> false;;
 
 let log G lG
@@ -32,3 +32,19 @@ done;
 ;;
 
 Et maintenant la méthode fine, celle de l'attaquant mathématicien cultivé... la méthode rho de Pollard!
+
+let rho c p P Q=
+(*d'abord on génère les points de manière àléatoire*)
+(*On va chercher l tel que P=lQ, ce qui revient à résoudre le problème du logaritme discret en base Q*)
+let continue= ref true and l= ref [] in
+let rec rechercherho t l=
+match l with
+|t::q-> let (                                       
+|[]-> false,(0,0,0)
+while (!continue= tue) do
+
+let a = Random.int(p) and b= Random.int(p) in
+l:= ((somme c p (mult c p P a)  mult(c p Q b)),a,b)::!l;
+match !l with
+|t::q -> recherche  
+
